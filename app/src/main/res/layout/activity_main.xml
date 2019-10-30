@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.heremapp.presentation.main.MainViewModel"/>
+        <variable
+                name="communicationViewModel"
+                type="com.heremapp.presentation.communication.CommunicationSupervisorViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/activity_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.heremapp.ui.uielements.components.BottomSheetTouchInterceptorLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"/>
+
+        <com.heremapp.ui.uielements.components.BottomSheet
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation" />
+
+        <com.heremapp.ui.uielements.components.CommunicationRippleView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:viewModel="@{communicationViewModel}"
+                app:communicationState="@{communicationViewModel.communicationStatus}"
+                app:isVisible="@{communicationViewModel.isLoading}"/>
+
+        <com.heremapp.ui.uielements.components.HereMappBottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/bottom_nav_menu"
+                app:itemBackground="@color/colorAccent"
+                app:itemIconTint="@color/colorPrimary"
+                app:itemTextColor="@color/colorPrimary"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

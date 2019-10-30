@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ui</string>
+
+    <!-- Map Screen -->
+    <string name="map_current_address_text">You are currently located at: %s.</string>
+
+    <!-- Fragment Place -->
+    <string name="place_fragment_address_title">Address:</string>
+    <string name="place_fragment_hours_title">Hours:</string>
+    <string name="place_fragment_distance_title">Distance:</string>
+    <string name="place_fragment_tags_title">Tags:</string>
+    <string name="place_fragment_notes_title">Notes:</string>
+
+</resources>

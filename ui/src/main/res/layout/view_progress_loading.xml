@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.heremapp.presentation.base.LoadingViewModel"/>
+    </data>
+
+    <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:indeterminate="true"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorAccent"
+            app:isVisible="@{viewModel.isLoading}"/>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="viewModel"
+                type="com.heremapp.presentation.search.SearchFragmentViewModel"/>
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:paddingTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categories_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        <com.heremapp.ui.uielements.components.LoadingProgressView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:viewModel="@{viewModel}"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

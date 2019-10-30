@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text -->
+    <style name="AppBodyText" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/gotham_family</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/DarkGray</item>
+    </style>
+
+    <style name="AppBodyText.Bold" parent="AppBodyText">
+        <item name="android:fontFamily">@font/gotham_bold</item>
+    </style>
+
+    <style name="AppBodyText.Bold.Gray" parent="AppBodyText.Bold">
+        <item name="android:textColor">@color/Gray</item>
+    </style>
+
+    <style name="AppSubtitleText" parent="AppBodyText">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+    </style>
+
+    <style name="AppSubtitleText.Bold" parent="AppSubtitleText">
+        <item name="android:fontFamily">@font/gotham_bold</item>
+        <item name="android:textColor">@color/Gray</item>
+    </style>
+
+    <style name="AppTitleText" parent="AppSubtitleText.Bold">
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="AppTitleText.BottomSheetToolbar">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/gotham_family</item>
+    </style>
+</resources>

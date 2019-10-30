@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <variable name="viewModel"
+                  type="com.heremapp.presentation.map.MapFragmentViewModel"/>
+    </data>
+
+    <com.heremapp.ui.uielements.components.MapTouchInterceptorLayout
+            android:id="@+id/map_interceptor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        <ImageButton
+                android:id="@+id/map_search_mode_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_map_button"
+                android:src="@drawable/ic_adjust_24dp"
+                android:onClick="@{() -> viewModel.onSearchModeClicked()}"
+                android:layout_gravity="end|top"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="53dp" />
+
+    </com.heremapp.ui.uielements.components.MapTouchInterceptorLayout>
+</layout>

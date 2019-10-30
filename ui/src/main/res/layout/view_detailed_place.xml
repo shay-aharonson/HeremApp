@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="placeViewModel"
+                type="com.heremapp.presentation.main.PlaceViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- Address -->
+        <TextView
+                style="@style/AppBodyText.Bold.Gray"
+                android:id="@+id/place_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/place_fragment_address_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/place_address_text" />
+
+        <TextView
+                style="@style/AppBodyText"
+                android:id="@+id/place_address_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{placeViewModel.vicinity}"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintStart_toEndOf="@+id/place_distance_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/place_hours_text"
+                app:layout_constraintEnd_toStartOf="@+id/place_favorite" />
+
+        <!-- Hours -->
+        <TextView
+                style="@style/AppBodyText.Bold.Gray"
+                android:id="@+id/place_hours_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/place_fragment_hours_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/place_hours_text" />
+
+        <TextView
+                style="@style/AppBodyText"
+                android:id="@+id/place_hours_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{placeViewModel.getOpenHoursString()}"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintStart_toEndOf="@id/place_distance_title"
+                app:layout_constraintTop_toBottomOf="@+id/place_address_text"
+                app:layout_constraintBottom_toTopOf="@id/place_distance_text"
+                app:layout_constraintEnd_toStartOf="@+id/place_favorite" />
+
+        <!-- Distance -->
+        <TextView
+                style="@style/AppBodyText.Bold.Gray"
+                android:id="@+id/place_distance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:text="@string/place_fragment_distance_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/place_distance_text" />
+
+        <TextView
+                style="@style/AppBodyText"
+                android:id="@+id/place_distance_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{placeViewModel.distance}"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintStart_toEndOf="@+id/place_distance_title"
+                app:layout_constraintTop_toBottomOf="@id/place_hours_text"
+                app:layout_constraintBottom_toTopOf="@id/place_tags_text"
+                app:layout_constraintEnd_toStartOf="@+id/place_favorite" />
+
+        <!-- Tags -->
+        <TextView
+                style="@style/AppBodyText.Bold.Gray"
+                android:id="@+id/place_tags_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/place_fragment_tags_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/place_tags_text" />
+
+        <TextView
+                style="@style/AppBodyText"
+                android:id="@+id/place_tags_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{placeViewModel.getTagsString()}"
+                app:layout_constraintStart_toEndOf="@+id/place_distance_title"
+                app:layout_constraintTop_toBottomOf="@id/place_distance_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/place_favorite" />
+
+        <CheckBox
+                android:id="@+id/place_favorite"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:button="@null"
+                android:background="@drawable/selector_favorite"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
